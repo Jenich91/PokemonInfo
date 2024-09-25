@@ -1,0 +1,150 @@
+body {
+    background-color: whitesmoke;
+}
+
+.search-input {
+    display: block;
+    margin: 10% auto; /* Отступ сверху и центрирование */
+    padding: 10px;
+    border: 5px solid #3498db; /* Начальный цвет рамки */
+    border-radius: 10px;
+    width: 30%; /* Ширина поля ввода */
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.search-input:focus {
+    border-color: #2ecc71; /* Изменение цвета рамки при фокусе */
+    outline: none; /* Убираем стандартный контур при фокусе */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень при фокусе */
+}
+
+.pokemonInfo {
+    display: flex; /* Изменяем display на flex */
+    margin: 10%; /* Отступ сверху и центрирование */
+    padding: 10px;
+    border: 5px solid #715588; /* Начальный цвет рамки */
+    border-radius: 10px;
+    width: 80%; /* Ширина поля ввода */
+    position: relative;
+    background-color: #f7f7f7; /* Цвет фона */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px; /* Изменяем позиционирование на top */
+    right: 10px; /* Изменяем позиционирование на right */
+    margin: 0; /* Убираем margin */
+    background-color: #e74c3c; /* Цвет кнопки */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 10px 20px; /* Поля */
+    border-radius: 10px; /* Радиус */
+    cursor: pointer; /* Курсор */
+}
+
+.close-button:hover {
+    background-color: #c0392b; /* Цвет кнопки при наведении */
+}
+
+.pokemon_img {
+    height: 128px;
+    border-radius: 10px; /* Радиус */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+    margin: 10px; /* Добавляем margin */
+}
+
+.pokemon_text {
+    margin: 10px; /* Добавляем margin */
+    flex: 1; /* Делаем текстовый блок гибким */
+}
+
+@media (max-width: 768px) {
+    .close-button {
+        top: 5px;
+        right: 5px;
+        padding: 5px 10px;
+    }
+}
+
+#checkboxInput {
+    display: none;
+}
+
+.toggleSwitch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background-color: rgb(205, 205, 205);
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: .2s;
+
+    float: right;
+    margin-right: 10px;
+    bottom: 30px;
+}
+
+.toggleSwitch span {
+    position: absolute;
+    top: -20px;
+    font-size: 14px;
+}
+
+.toggleSwitch::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    left: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition-duration: .2s;
+    box-shadow: 5px 2px 7px rgba(8, 8, 8, 0.26);
+    border: 5px solid white;
+}
+
+#checkboxInput:checked + .toggleSwitch::after {
+    transform: translateX(100%);
+    transition-duration: .2s;
+    background-color: white;
+}
+
+#checkboxInput:checked + .toggleSwitch {
+    background-color: rgb(20, 20, 20);
+    transition-duration: .2s;
+}
+
+/* Темная тема */
+.dark {
+    --background-color: black;
+    --text-color: white;
+    --box-shadow: 0 0 10px rgba(255, 255, 255, 0.99)
+}
+
+.search-input {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pokemonInfo {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.pokemon_img {
+    box-shadow: var(--box-shadow);
+}
+
+.toggleSwitch {
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--background-color);
+}
